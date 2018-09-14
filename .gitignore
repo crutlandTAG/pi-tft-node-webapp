@@ -8,3 +8,5 @@
 node_modules
 
 update-device.sh
+
+.resin-sync.yml
