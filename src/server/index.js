@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const path = require("path");
 const { screen, Colors } = require("./lib/screen");
 const { coalesce } = require("./lib/helpers");
@@ -8,6 +9,7 @@ const app = express();
 
 function setupMiddleware() {
   console.log("setting up expressjs middleware");
+  app.use(cors());
   app.use(express.static(`${__dirname}/wwwroot`));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
