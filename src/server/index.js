@@ -20,14 +20,14 @@ function setupRoutes() {
     res.json({ "message": "Hello World!" });
   });
 
-  app.post("api/color", (req, res) => {
+  app.post("/api/color", (req, res) => {
     let color = req.body.color;
     if (!color) color = Colors.black;
     screen.setBackgroundColor(color);
     res.sendStatus(200);
   })
 
-  app.post("api/displayMessage", (req, res) => {
+  app.post("/api/displayMessage", (req, res) => {
     let message = coalesce(req.body.message, "No Message Provided");
     let background = coalesce(req.body.background, Colors.black);
     let foreground = coalesce(req.body.foreground, Colors.blue);
@@ -37,7 +37,7 @@ function setupRoutes() {
   });
 
   app.get("*", (req, res) => {
-    const index = path.resolve(__dirname, "index.html");
+    const index = path.resolve(__dirname, "wwwroot", "index.html");
     res.sendFile(index);
   })
 }
