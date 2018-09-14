@@ -1,3 +1,3 @@
 module.exports = {
-  coalesce = (x, y) => x == null ? y : x
+  coalesce: (x, y) => x == null ? y : x
 }
