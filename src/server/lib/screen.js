@@ -50,17 +50,19 @@ function setColor(color) {
 class Screen {
   constructor() {
     clear();
-    drawBackground("#000000");
-    drawCenteredText("Initialized", "#FFFFFF");
+    drawBackground(Colors.black);
+    drawCenteredText("Initialized", Colors.white);
   }
 
   setBackgroundColor(color) {
     drawBackground(color);
+    update();
   }
 
   printText(text, background = Colors.black, foreground = Colors.white) {
     drawBackground(background);
     drawCenteredText(text, foreground);
+    update();
   }
 
 }
