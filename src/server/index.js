@@ -27,7 +27,8 @@ function setupRoutes() {
     res.sendStatus(200);
   })
 
-  app.post("/api/displayMessage", (req, res) => {
+  app.post("/api/message", (req, res) => {
+    let title = req.body.title;
     let message = coalesce(req.body.message, "No Message Provided");
     let background = coalesce(req.body.background, Colors.black);
     let foreground = coalesce(req.body.foreground, Colors.blue);

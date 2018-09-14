@@ -66,6 +66,10 @@ class Screen {
     update();
   }
 
+  printTitledText() {
+    
+  }
+
 }
 
 module.exports = {
