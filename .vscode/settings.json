@@ -1,3 +1,6 @@
 {
+  "files.associations": {
+    "Dockerfile.template": "dockerfile"
+  },
   "files.eol": "\n"
 }
