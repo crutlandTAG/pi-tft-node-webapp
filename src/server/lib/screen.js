@@ -50,8 +50,8 @@ function setColor(color) {
 class Screen {
   constructor() {
     clear();
-    drawBackground(Colors.black);
-    drawCenteredText("Initialized", Colors.white);
+    drawBackground("#000000");
+    drawCenteredText("Initialized", "#FFFFFF");
   }
 
   setBackgroundColor(color) {

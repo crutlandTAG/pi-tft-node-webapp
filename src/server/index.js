@@ -13,11 +13,20 @@ function setupRoutes() {
   app.get("/", (req, res) => {
     res.json({"message": "hello-world"});
   });
+
+  app.post("/colors", (req, res) => {
+    let color = req.body.color;
+    if(!color) color = "#FF0000";
+    screen.setBackgroundColor(color);
+    res.sendStatus(200);
+  })
+
   app.post("/", (req, res) => {
     let message = req.body.message;
     if(!message) message = "No Message Provided.";
     screen.printText(`Message: ${message}`, Colors.black, Colors.red);
     setTimeout(() => screen.printText("Waiting..."), 3000);
+    res.sendStatus(200);
   });  
 }
 
