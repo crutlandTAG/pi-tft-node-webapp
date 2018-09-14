@@ -19,7 +19,7 @@ RUN JOBS=MAX npm install --production --unsafe-perm && npm cache verify && rm -r
 COPY /src/server ./
 
 # Copy client files
-COPY /src/client/build ./wwwroot
+COPY /src/client/ ./wwwroot
 
 RUN chmod +x ./start.sh
 
