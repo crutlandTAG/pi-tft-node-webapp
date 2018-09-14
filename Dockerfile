@@ -16,7 +16,7 @@ COPY package.json ./
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache verify && rm -rf /tmp/*
 
 # Copy all of files here for caching purposes
-COPY /src/server ./
+COPY /src/server/**/*.js ./
 
 # Copy client files
 COPY /src/client/build ./wwwroot

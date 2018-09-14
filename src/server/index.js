@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { screen, Colors } = require("./lib/screen");
+const { coalesce } = require("./lib/helpers");
 
 const app = express();
 
@@ -27,9 +28,10 @@ function setupRoutes() {
   })
 
   app.post("api/displayMessage", (req, res) => {
-    let message = req.body.message;
-    if (!message) message = "No Message Provided.";
-    screen.printText(`Message: ${message}`, Colors.black, Colors.blue);
+    let message = coalesce(req.body.message, "No Message Provided");
+    let background = coalesce(req.body.background, Colors.black);
+    let foreground = coalesce(req.body.foreground, Colors.blue);
+    screen.printText(`Message: ${message}`, background, foreground);
     setTimeout(() => screen.printText("Waiting..."), 3000);
     res.sendStatus(200);
   });
