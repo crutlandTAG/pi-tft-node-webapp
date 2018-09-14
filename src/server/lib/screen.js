@@ -4,8 +4,8 @@ const screenDims = fb.size();
 const fontFace = "fantasy";
 
 const Colors = {
-  black: fb.patternCreateRGB(1, 1, 1),
-  white: fb.patternCreateRGB(0, 0, 0),
+  black: fb.patternCreateRGB(0, 0, 0),
+  white: fb.patternCreateRGB(1, 1, 1),
   red: fb.patternCreateRGB(1, 0, 0),
   green: fb.patternCreateRGB(0, 1, 0),
   blue: fb.patternCreateRGB(0, 0, 1)
@@ -52,6 +52,7 @@ class Screen {
     clear();
     drawBackground(Colors.black);
     drawCenteredText("Initialized", Colors.white);
+    update();
   }
 
   setBackgroundColor(color) {
