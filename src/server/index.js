@@ -35,7 +35,7 @@ function setupRoutes() {
     let background = coalesce(req.body.background, Colors.black);
     let foreground = coalesce(req.body.foreground, Colors.blue);
     screen.printText(`Message: ${message}`, background, foreground);
-    setTimeout(() => screen.printText("Waiting..."), 3000);
+    //setTimeout(() => screen.printText("Waiting..."), 3000);
     res.sendStatus(200);
   });
 

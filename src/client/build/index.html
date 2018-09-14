@@ -46,14 +46,32 @@
       <div class="card my-4">
         <h5 class="card-header">Display Message on Device</h5>
         <div class="card-body">
-          <div class="alert alert-success" role="alert" id="alert-message-send-success hidden">
+          <div class="alert alert-success hidden" role="alert" id="alert-message-send-success">
             Message Sent to Device
           </div>
-          <div class="alert alert-danger" role="alert" id="alert-message-send-success hidden">
+          <div class="alert alert-danger hidden" role="alert" id="alert-message-send-fail">
             Message Failed to Send to Device. Check JS Console.
           </div>
-          <form id="post-message">
-            <input class="form-control" />
+          <form id="post-message" method="POST">
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="messageText">Message</label>
+                <input type="text" class="form-control" id="messageText" name="message" placeholder="Message">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="foregroundColor">Text Color</label>
+                <input type="color" class="form-control color-picker" id="foregroundColor" name="foreground" value="#f44242">
+              </div>
+              <div class="form-group col">
+                <label for="backgroundColor">Background Color</label>
+                <input type="color" class="form-control color-picker" id="backgroundColor" name="background" value="#000000">
+              </div>
+            </div>
+            <div style="text-align: right">
+              <button type="submit" class="btn btn-primary btn-pill">Send Message</button>
+            </div>
           </form>
         </div>
       </div>
@@ -62,7 +80,7 @@
 
   <!-- Optional JavaScript -->
   <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
