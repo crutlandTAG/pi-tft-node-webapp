@@ -1,0 +1,10 @@
+# Vim
+*.swp
+
+# Logs
+*.log
+
+# Folders
+node_modules
+
+update-device.sh

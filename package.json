@@ -1,0 +1,20 @@
+{
+  "name": "cr-example-node",
+  "version": "1.0.0",
+  "description": "node server with client app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.9.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pitft": "~0.0.11"
+  }
+}
