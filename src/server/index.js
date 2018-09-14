@@ -39,6 +39,11 @@ function setupRoutes() {
     res.sendStatus(200);
   });
 
+  app.post("/api/clearMessage", (req, res) => {
+    screen.printText("Cleared.", Colors.black, Colors.white);
+    res.sendStatus(200);
+  });
+
   app.get("*", (req, res) => {
     const index = path.resolve(__dirname, "wwwroot", "index.html");
     res.sendFile(index);

@@ -3,18 +3,22 @@ const apiRoot = "";
 
 const alerts = {
   messageSendSuccess: $("#alert-message-send-success"),
-  messageSendFail: $("#alert-message-send-fail")
+  messageClearSuccess: $("#alert-message-clear-success"),
+  messageSendFail: $("#alert-message-send-fail"),
+  messageClearFail: $("#alert-message-clear-fail")
 }
 
 function setupHandlers() {
-  $("#post-message").on("submit", postMessage);
+  $("#post-message").on("submit", postMessageToDevice);
+  $("#clear-message").on("click", clearMessage);
 }
 
 $(function() {
   setupHandlers();
 });
 
-function postMessage(e) {
+function postMessageToDevice(e) {
+  if(!e.preventDefault) return;
   e.preventDefault();
   var data = $("#post-message").serialize();
   $.ajax({
@@ -33,4 +37,17 @@ function postMessage(e) {
 function showAlert(alert, time) {
   alert.show();
   setTimeout(function() { alert.hide() }, time);
+}
+
+function clearMessage() {
+  $.ajax({
+    type: "POST",
+    url: `${apiRoot}/api/clearMessage`
+  }).done(function() {
+    showAlert(alerts.messageClearSuccess, 3000);
+  }).fail(function() {
+    console.error("failed to send");
+    console.log(arguments);
+    showAlert(alerts.messageClearFail, 5000);
+  });
 }

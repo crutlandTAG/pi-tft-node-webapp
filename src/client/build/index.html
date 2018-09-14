@@ -49,8 +49,14 @@
           <div class="alert alert-success hidden" role="alert" id="alert-message-send-success">
             Message Sent to Device
           </div>
+          <div class="alert alert-success hidden" role="alert" id="alert-message-clear-success">
+            Cleared!
+          </div>
           <div class="alert alert-danger hidden" role="alert" id="alert-message-send-fail">
             Message Failed to Send to Device. Check JS Console.
+          </div>
+          <div class="alert alert-danger hidden" role="alert" id="alert-message-clear-fail">
+            Failed to Clear. Check JS Console.
           </div>
           <form id="post-message" method="POST">
             <div class="form-row">
@@ -70,6 +76,7 @@
               </div>
             </div>
             <div style="text-align: right">
+              <button type="button" class="btn btn-danger btn-pill" id="clear-message">Clear Current Message</button>
               <button type="submit" class="btn btn-primary btn-pill">Send Message</button>
             </div>
           </form>
